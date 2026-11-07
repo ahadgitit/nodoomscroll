@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.nodoomscroll.shorts'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.nodoomscroll.shorts'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+
+    signingConfigs {
+        release {
+            // CI supplies a keystore through environment variables; otherwise the debug key is used.
+            def ks = System.getenv('NDS_KEYSTORE')
+            if (ks) {
+                storeFile file(ks)
+                storePassword System.getenv('NDS_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('NDS_KEY_ALIAS')
+                keyPassword System.getenv('NDS_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig System.getenv('NDS_KEYSTORE') ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

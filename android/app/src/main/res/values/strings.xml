@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoDoomScroll</string>
+    <string name="service_label">NoDoomScroll – block YouTube Shorts</string>
+    <string name="service_description">Watches only the YouTube app. When the Shorts player opens, NoDoomScroll presses Back to close it. It reads nothing else, stores nothing and sends nothing anywhere.</string>
+</resources>
