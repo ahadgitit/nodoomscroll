@@ -1,0 +1,14 @@
+:root { color-scheme: light dark; --bg: #fff; --fg: #0f0f0f; --muted: #606060; --line: #e5e5e5; --accent: #cc0000; }
+@media (prefers-color-scheme: dark) { :root { --bg: #212121; --fg: #f1f1f1; --muted: #aaa; --line: #3a3a3a; --accent: #ff4e45; } }
+* { box-sizing: border-box; }
+body { margin: 0; width: 300px; padding: 14px 16px; background: var(--bg); color: var(--fg); font: 13px/1.4 system-ui, sans-serif; }
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+h1 { font-size: 16px; margin: 0; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); cursor: pointer; }
+.row small { display: block; color: var(--muted); }
+input[type="checkbox"] { appearance: none; flex: none; width: 36px; height: 20px; border-radius: 10px; background: var(--line); position: relative; cursor: pointer; transition: background .15s; }
+input[type="checkbox"]::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .15s; }
+input[type="checkbox"]:checked { background: var(--accent); }
+input[type="checkbox"]:checked::after { transform: translateX(16px); }
+input[type="checkbox"]:disabled { opacity: .4; cursor: default; }
+.note { color: var(--muted); font-size: 12px; margin: 8px 0 0; }

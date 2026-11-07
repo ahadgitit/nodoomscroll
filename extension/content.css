@@ -1,0 +1,46 @@
+/*
+ * NoDoomScroll – hides YouTube Shorts.
+ * Every rule is scoped to html.nds-on so the popup toggle can switch it off instantly.
+ */
+
+/* ---------- Sidebar / navigation ---------- */
+html.nds-on ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html.nds-on ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+html.nds-on ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html.nds-on ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+html.nds-on ytm-pivot-bar-item-renderer:has(.pivot-shorts),
+
+/* ---------- Shorts shelves (home, subscriptions, search, watch page, mobile) ---------- */
+html.nds-on ytd-rich-shelf-renderer[is-shorts],
+html.nds-on ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html.nds-on ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model),
+html.nds-on ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2),
+html.nds-on ytd-reel-shelf-renderer,
+html.nds-on ytm-reel-shelf-renderer,
+html.nds-on grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+html.nds-on grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2),
+html.nds-on ytd-item-section-renderer:has(> #contents > ytd-reel-shelf-renderer:only-child),
+html.nds-on ytm-shorts-lockup-view-model,
+html.nds-on ytm-shorts-lockup-view-model-v2,
+
+/* ---------- Individual Shorts mixed into normal video lists ---------- */
+html.nds-on ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytd-video-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytd-compact-video-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytd-playlist-video-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytd-playlist-panel-video-renderer:has(a[href^="/shorts/"]),
+html.nds-on yt-lockup-view-model:has(a[href^="/shorts/"]),
+html.nds-on ytm-video-with-context-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytm-compact-video-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytm-rich-item-renderer:has(a[href^="/shorts/"]),
+html.nds-on ytd-notification-renderer:has(a[href^="/shorts/"]),
+
+/* ---------- Channel page "Shorts" tab ---------- */
+html.nds-on yt-tab-shape[tab-title="Shorts"],
+html.nds-on tp-yt-paper-tab.nds-shorts-tab,
+
+/* ---------- "Shorts" filter chips & elements tagged by content.js ---------- */
+html.nds-on .nds-hidden {
+  display: none !important;
+}
